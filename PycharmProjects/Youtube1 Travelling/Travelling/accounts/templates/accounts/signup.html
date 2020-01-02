@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+      <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+<!--    -->
+
+     <div class="container">
+                <!---->
+                <h2 class="mt-2">Sign-up</h2>
+                <form action="{%url 'accounts:signup'%}" method="POST">
+                     {% csrf_token %}
+                    <div class="form-group">
+                        <label for="user_name">Username.</label>
+                        <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Name.">
+                    </div>
+                      <div class="form-group">
+                        <label for="first_name">First name.</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First name.">
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last name.</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last name.">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email.</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="email@gmail.com">
+                    </div>
+                   <div class="form-group">
+                        <label for="password">Password.</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password.">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm password">Comfirm Passowrd.</label>
+                        <input type="password" class="form-control" id="confirm password" name="confirm password" placeholder="Comfirm Password.">
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-primary">Submit.</button>
+
+                </form>
+
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    -->
+
+
+<div>
+
+    {%for m in messages%}
+    <h1>{{m}}</h1>
+    {% endfor %}
+
+</div>
+
+
+</body>
+</html>
